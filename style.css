@@ -1,0 +1,782 @@
+body{
+    /* margin: 80px 0 0; */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;;
+    background: #6D7F3D;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+    "header header header header header header header header header header header header"
+    "baner baner baner baner baner baner baner baner baner baner baner baner"
+    "oferta1 oferta1 oferta1 oferta1 oferta1 oferta1 oferta1 oferta1 oferta1 oferta1 oferta1 oferta1"
+    "oferta2 oferta2 oferta2 oferta2 oferta2 oferta2 oferta2 oferta2 oferta2 oferta2 oferta2 oferta2"
+    "realizacje realizacje realizacje realizacje realizacje realizacje realizacje realizacje realizacje realizacje realizacje realizacje"
+    "galeria galeria galeria galeria galeria galeria galeria galeria galeria galeria galeria galeria"
+    "kontakt kontakt kontakt kontakt kontakt kontakt kontakt kontakt kontakt kontakt kontakt kontakt"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+    column-gap: 20px;
+    overflow-x: hidden;
+}
+header{
+    display: flex;
+    /* position: fixed; */
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    grid-area: header;
+    background: #414C25;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    z-index: 2;
+}
+header img{
+    width: 131px;
+    height: 74px;
+    margin-left: 3px;
+}
+nav{
+    font-size: 30px;
+    font-weight: 400;
+    z-index: 5;
+}
+nav img{
+    display: none;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 450px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+nav + div{
+    z-index: 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    right: 20%;
+    width: 80%;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #BDD484;
+}
+nav ul li a:hover{
+    color: #8D9675;
+}
+#zaznaczone{
+    display: none;
+}
+.etykieta_zaznaczone, .etykieta_zamknij{
+    cursor: pointer;
+    padding: 38px 22.5px;
+    display: none;
+}
+.etykieta_zaznaczone .kreski{
+    width: 35px;
+    height: 4px;
+    background-color: #BDD484;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+}
+.etykieta_zaznaczone .kreski::before{
+    content: '';
+    top: -12px;
+    width: 100%;
+    height: 100%;
+    background-color: #BDD484;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+}
+.etykieta_zaznaczone .kreski::after{
+    content: '';
+    top: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: #BDD484;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+}
+.etykieta_zamknij .kreski{
+    width: 35px;
+    height: 4px;
+    background-color: #414C25;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+    background: transparent;
+}
+.etykieta_zamknij .kreski::before{
+    content: '';
+    top: -12px;
+    width: 100%;
+    height: 100%;
+    background-color: #414C25;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+    transform: translate(0,12px) rotate(-45deg);
+}
+.etykieta_zamknij .kreski::after{
+    content: '';
+    top: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: #414C25;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+    transform: translate(0,-12px) rotate(45deg);
+}
+.body_fixed{
+    background: #000;
+    opacity: 0.7;
+    position: absolute;
+    width: 100%;
+    height: 200vh;
+    z-index: 3;
+    display: none;
+}
+
+.baner{
+    grid-area: baner;
+    margin: 0;
+    position: relative;
+    color: #BDD484;
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow: hidden;
+    background-image: url("images/baner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.baner img{
+    width: 100%;
+    display: none;
+}
+.baner p{
+    position: absolute;
+    font-size: 45px;
+    bottom: 0px;
+    margin: 20px;
+} 
+
+article{
+    color: #414C25;
+}
+.check_image{
+    height: 63px;
+}
+#oferta{
+    position: absolute;
+    transform: translate(0,-88px);
+}
+.oferta, .realizacje{
+    margin: 10px 20px;
+}
+.oferta1{
+    grid-area: oferta1;
+}
+.oferta1 div:last-child div img{
+    width: 37px;
+    height: 44px;
+}
+.oferta1 > div:last-child div:nth-child(1) div{
+    width: 150px;
+}
+.oferta1 > div:last-child div:nth-child(2) div{
+    width: 190px;
+}
+.oferta1 > div:last-child div:nth-child(3) div{
+    width: 197px;
+}
+.oferta1 > div:last-child div:nth-child(4) div{
+    width: 233px;
+}
+.oferta2 > div:last-child div:nth-child(1) div{
+    width: 202px;
+}
+.oferta2 > div:last-child div:nth-child(2) div{
+    width: 174px;
+}
+.oferta2 > div:last-child div:nth-child(3) div{
+    width: 100px;
+}
+.oferta2 > div:last-child div:nth-child(4) div{
+    width: 85px;
+}
+.oferta2{
+    grid-area: oferta2;
+}
+.oferta2 div:last-child div img{
+    width: 62px;
+    height: 61px;
+}
+.tytul{
+    display: flex;
+    align-items: center;
+}
+.oferta > div:last-child{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.oferta h1{
+    margin: 0;
+    font-size: 25px;
+}
+.oferta div:last-child div div p{
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+.oferta div:last-child div:last-child p{
+    text-align: center;
+}
+.oferta div:last-child div div{
+    background: #BDD484;
+    padding: 10px 15px;
+    margin: 0 auto;
+    border-radius: 180px 180px 180px 180px / 75px 75px 75px 75px;
+}
+.oferta div:last-child div{
+    width: 270px;
+}
+.oferta div:last-child div p{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+.oferta div div img{
+    display: block;
+    margin: 20px auto;
+}
+.realizacje{
+    grid-area: realizacje;
+}
+.realizacje p{
+    font-weight: 700;
+    font-size: 25px;
+    margin: 0;
+}
+.realizacje div{
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px;
+}
+
+#galeria{
+    position: absolute;
+    transform: translate(0,-70px);
+}
+.galeria{
+    grid-area: galeria;
+    padding: 0;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.galeria img{
+    width: 100%;
+}
+.galeria div:first-child{
+    grid-template-areas: "pancernik zolnierz lotniskowiec transportowiec"
+    "pancernik wyrzutnia czolg transportowiec";
+}
+.galeria div{
+    margin: 0;
+    display: grid;
+    justify-content: center;
+}
+.galeria .pancernik{
+    grid-area: pancernik;
+}
+.galeria .zolnierz{
+    grid-area: zolnierz;
+}
+.galeria .lotniskowiec{
+    grid-area: lotniskowiec;
+}
+.galeria .transportowiec{
+    grid-area: transportowiec;
+}
+.galeria .wyrzutnia{
+    grid-area: wyrzutnia;
+}
+.galeria .czolg{
+    grid-area: czolg;
+}
+.galeria .smiglowiecv2{
+    display: none;
+}
+.galeria .helikopterv2{
+    display: none;
+}
+.galeria .mysliwiecv2{
+    display: none;
+}
+.galeria div:last-child{
+    grid-template-areas: "mysliwiec_smiglowiec mysliwiec";
+}
+.galeria div:last-child div{
+    grid-area: mysliwiec_smiglowiec;
+}
+.galeria .mysliwiec{
+    grid-area: mysliwiec;
+}
+
+#kontakt{
+    position: absolute;
+    transform: translate(0,-100px);
+}
+.kontakt{
+    grid-area: kontakt;
+    margin: 20px 30px 40px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.kontakt > div{
+    position: relative;
+}
+.kontakt div img{
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1324px;
+    opacity: 0.6;
+}
+.kontakt > div > div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.kontakt > div > div > p{
+    color: #FFF;
+    font-weight: 600;
+    font-size: 35px;
+    margin: 40px 40px 30px;
+}
+.kontakt div div form{
+    font-size: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.kontakt div div form > div{
+    bottom: 0;
+    background: #FFF;
+    padding: 20px;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    margin: 0 0 30px;
+    z-index: 1;
+}
+.kontakt div div form > div:nth-child(2),.kontakt div div form > div:nth-child(3){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.kontakt div div form > div:nth-child(3){
+    margin: 0 0 20px 0;
+}
+.kontakt div div form p{
+    color: #000;
+    margin: 0;
+    padding: 0 5px 0 0;
+}
+.kontakt div div form div:nth-child(1) div:nth-child(2){
+    margin: 10px 0;
+}
+.kontakt div div form div div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.kontakt div div form div div select{
+    background: #8D9675;
+    padding: 9px;
+    border: none;
+    width: 80%;
+    cursor: pointer;
+    font-size: 15px;
+}
+.kontakt div div form div input{
+    background: #8D9675;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+}
+.kontakt div div form div input:nth-child(2), .kontakt div div form > div:nth-child(3) input{
+    width: 45px;
+}
+.kontakt div div form div:nth-child(2) div input:nth-child(3){
+    width: 110px;
+}
+.kontakt div div form div:nth-child(2) input:nth-child(2){
+    margin: 0 20px 0 0;
+}
+.kontakt div div form > div:nth-child(3) div p{
+    padding: 0 10px;
+    font-size: 30px;
+}
+.kontakt div div form > div:last-child{
+    margin: 0;
+    padding: 0;
+    transform: translate(20px, 0);
+    background: transparent;
+    display: flex;
+    justify-content: end;
+}
+.kontakt div div form > div:last-child input{
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+footer{
+    grid-area: footer;
+    background: #414C25;
+    color: #BDD484;
+    font-size: 15px;
+}
+footer div{
+    display: flex;
+    justify-content: center;
+}
+footer > p{
+    margin: 20px;
+}
+footer div p{
+    margin: 20px 0 0;
+}
+
+@media all and (max-width: 1425px){
+    .galeria div:first-child{
+        grid-template-areas: "pancernik zolnierz transportowiec"
+        "pancernik czolg transportowiec"
+        "wyrzutnia lotniskowiec smiglowiecv2";
+    }
+    .galeria div:last-child{
+        overflow: hidden;
+    }
+    .galeria div:last-child img{
+        width: 100%;
+    }
+    .galeria div:last-child div{
+        display: none;
+    }
+    .galeria .smiglowiec{
+        display: none;
+    }
+    .galeria .helikopter{
+        display: none;
+    }
+    .galeria .mysliwiec{
+        display: none;
+    }
+    .galeria .smiglowiecv2{
+        display: block;
+        grid-area: smiglowiecv2;
+    }
+    .galeria .helikopterv2{
+        display: block;
+    }
+    .galeria .mysliwiecv2{
+        display: block;
+    }
+}
+
+@media all and (max-width: 1240px){
+    body{
+        grid-template-columns: repeat(8,1fr);
+        grid-template-areas: 
+        "header header header header header header header header"
+        "baner baner baner baner baner baner baner baner"
+        "oferta1 oferta1 oferta1 oferta1 oferta1 oferta1 oferta1 oferta1"
+        "oferta2 oferta2 oferta2 oferta2 oferta2 oferta2 oferta2 oferta2"
+        "realizacje realizacje realizacje realizacje realizacje realizacje realizacje realizacje"
+        "galeria galeria galeria galeria galeria galeria galeria galeria"
+        "kontakt kontakt kontakt kontakt kontakt kontakt kontakt kontakt"
+        "footer footer footer footer footer footer footer footer";
+    }
+    .baner{
+        background-image: none;
+        height: auto;
+    }
+    .baner img{
+        display: block;
+    }
+    .baner p{
+        font-size: 35px;
+    }
+}
+
+@media all and (max-width: 1015px){
+    .kontakt div div form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 52px);
+    }
+    .kontakt > div > div > p {
+        font-size: 30px;
+        margin: 15px 15px 0;
+    }
+    .kontakt div div form > div {
+        padding: 10px;
+    }
+    .kontakt div div form{
+        font-size: 17px;
+    }
+    .kontakt div div form div:nth-child(1) div:nth-child(2) {
+        margin: 7px 0;
+    }
+    .kontakt div div form > div {
+        margin: 0 0 10px;
+    }
+    .kontakt div div form div:nth-child(2) div input:nth-child(3) {
+        width: 80px;
+    }
+    .kontakt div div form div input:nth-child(2), .kontakt div div form > div:nth-child(3) input {
+        width: 35px;
+    }
+    .kontakt div div form > div:last-child input {
+        font-size: 10px;
+    }
+    .kontakt div div form > div:nth-child(3) {
+        margin: 0 0 5px 0;
+    }
+    .kontakt div div form > div:last-child{
+        transform: translate(10px, 0);
+    }
+    .kontakt div div form div div select {
+        padding: 5px;
+    }
+    .kontakt div div form div input{
+        padding: 5px;
+    }
+    .kontakt div div form div input[type=submit]{
+        padding: 8px;
+    }
+    .kontakt div div form div div:nth-child(2){
+        height: 27px;
+    }
+}
+
+@media all and (max-width: 740px){
+    .kontakt div div form > div {
+        width: 340px;
+    }
+}
+
+@media all and (max-width: 600px){
+    body{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: 
+        "header header header header"
+        "baner baner baner baner"
+        "oferta1 oferta1 oferta1 oferta1"
+        "oferta2 oferta2 oferta2 oferta2"
+        "realizacje realizacje realizacje realizacje"
+        "galeria galeria galeria galeria"
+        "kontakt kontakt kontakt kontakt"
+        "footer footer footer footer";
+    }
+    .baner p{
+        margin: 10px;
+        font-size: 20px;
+    }
+    .realizacje p{
+        font-size: 20px;
+    }
+    .oferta h1{
+        font-size: 20px;
+    }
+    .oferta div:last-child div{
+        width: auto;
+        padding: 0 10px;
+    }
+    .oferta div:last-child div div{
+        padding: 10px;
+    }
+    .oferta div:last-child div div p{
+        margin: 0;
+        font-size: 20px;
+    }
+    .oferta1 div:last-child div:nth-child(1) div{
+        width: 140px;
+    }
+    .oferta1 div:last-child div:nth-child(2) div{
+        width: 160px;
+    }
+    .oferta1 div:last-child div:nth-child(3) div{
+        width: 170px;
+    }
+    .oferta1 div:last-child div:nth-child(4) div{
+        width: 200px;
+    }
+    .oferta2 div:last-child div:nth-child(1) div{
+        width: 180px;
+    }
+    .oferta2 div:last-child div:nth-child(2) div{
+        width: 150px;
+    }
+    footer p:first-child{
+        margin: 20px 20px 0;
+    }
+    nav{
+        position: absolute;
+        height: 100vh;
+        width: 80%;
+        top: 0;
+        align-items: center;
+        z-index: 4;
+        background-color: #BDD484;
+        transform: translate(-100%,0);
+        transition: transform .8s ease-in-out;
+    }
+    nav a{
+        width: 100%;
+    }
+    nav img{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1px 0 0 3px;
+    }
+    nav + div{
+        transform: translate(-100%,0);
+        transition: transform .8s ease-in-out;
+    }
+    nav ul{
+        flex-direction: column;
+        justify-content: start;
+        position: relative;
+        width: 100%;
+        margin-top: calc(20% + 80px);
+        height: 100%;
+    }
+    nav ul li{
+        padding: 50px 0 0;
+    }
+    nav ul li a{
+        color: #414C25;
+        font-weight: 800;
+    }
+    #etykieta_zamknij{
+        transform: translate(-100%,0);
+    }
+    .etykieta_zaznaczone, .etykieta_zamknij{
+        display: block;
+    }
+    #zaznaczone:checked ~ .body_fixed{
+        display: block;
+    }
+    #zaznaczone:checked ~ nav{
+        transform: translate(0,0);
+    }
+    #zaznaczone:checked ~ div{
+        transform: translate(0,0);
+    }
+    .galeria{
+        margin: 20px 20px 10px;
+    }
+    .kontakt{
+        margin: 20px;
+    }
+    .kontakt > div > div > p{
+        font-size: 15px;
+        margin: 10px 10px 5px;
+    }
+    .kontakt div div form{
+        height: calc(100% - 35px);
+        font-size: 14px;
+    }
+    .kontakt div div form > div{
+        width: 295px;
+        padding: 7px;
+        margin: 0 0 7px;
+    }
+    .kontakt div div form div input[type=submit] {
+        padding: 5px;
+    }
+    .kontakt div div form div input, .kontakt div div form div div select{
+        font-size: 10px;
+    }
+    .kontakt div div form div div:nth-child(2) {
+        height: 21px;
+    }
+    .kontakt div div form div:nth-child(1) div:nth-child(2) {
+        margin: 5px 0;
+    }
+    .kontakt div div form > div:last-child {
+        transform: translate(7px, 0);
+    }
+    .kontakt div div form div:nth-child(2) input:nth-child(2){
+        margin: 0 10px 0 0;
+    }
+}
+@media all and (max-width: 450px){
+    .kontakt{
+        padding: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+    .kontakt::after{
+        content: '';
+        background-image: url("images/aleja2.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        position: absolute;
+        overflow: hidden;
+        z-index: -1;
+    }
+    .kontakt img{
+        display: none;
+    }
+    .kontakt > div {
+        position: static;
+        width: 100%;
+    }
+    .kontakt div div form {
+        height: auto;
+    }
+    .kontakt > div > div{
+        position: static;
+    }
+    .kontakt > div > div > p{
+        margin: 10px 0;
+    }
+    .kontakt div div form > div{
+        width: calc(100% - 14px);
+    }
+    .kontakt div div form div div select {
+        width: 75%;
+    }
+    .kontakt div div form div input:nth-child(2){
+        width: 25px;
+    }
+    .kontakt div div form div:nth-child(2) div input:nth-child(3) {
+        width: 65px;
+    }
+}
